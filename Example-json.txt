@@ -1,0 +1,242 @@
+POST - http://127.0.0.1:8000/api/rules/create_rule
+{
+    "rule_string": "age > 30 AND department = 'Sales'"
+}
+
+{
+    "rule_string": "salary > 50000 OR experience >= 3"
+}
+
+{
+    "rule_string": "location = 'New York' AND age < 40"
+}
+
+{
+    "rule_string": "department = 'HR' OR age >= 25"
+}
+
+{
+    "rule_string": "experience > 5 AND salary <= 60000"
+}
+
+{
+    "rule_string": "age > 50 OR location = 'California'"
+}
+
+
+------------------------------------------------------------------------------------------
+
+
+POST - http://127.0.0.1:8000/api/rules/combine_rules
+
+{
+    "rules": [
+        "age > 30 AND department = 'Sales'",
+        "salary > 50000 OR experience >= 3"
+    ]
+}
+
+{
+    "rules": [
+        "location = 'New York' AND age < 40",
+        "department = 'HR' OR age >= 25"
+    ]
+}
+
+
+{
+    "rules": [
+        "experience > 5 AND salary <= 60000",
+        "age > 35 OR location = 'California'"
+    ]
+}
+
+
+{
+    "rules": [
+        "age < 25 AND department = 'Marketing'",
+        "experience < 2 AND salary < 40000"
+    ]
+}
+
+
+{
+    "rules": [
+        "department = 'Engineering' AND age > 28",
+        "location = 'San Francisco' OR salary > 70000"
+    ]
+}
+
+
+{
+    "rules": [
+        "age >= 45 OR department = 'Operations'",
+        "experience >= 10 AND location = 'Remote'"
+    ]
+}
+
+
+-----------------------------------------------------------------------------------
+
+POST - http://127.0.0.1:8000/api/rules/evaluate_rule
+
+{
+    "ast": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+            "type": "operator",
+            "value": "OR",
+            "left": {
+                "type": "operand",
+                "value": "age < 30"
+            },
+            "right": {
+                "type": "operand",
+                "value": "department = 'HR'"
+            }
+        },
+        "right": {
+            "type": "operand",
+            "value": "salary >= 40000"
+        }
+    },
+    "data": {
+        "age": 25,
+        "department": "HR",
+        "salary": 45000,
+        "experience": 2
+    }
+}
+
+
+
+{
+    "ast": {
+        "type": "operator",
+        "value": "OR",
+        "left": {
+            "type": "operand",
+            "value": "experience > 5"
+        },
+        "right": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": "location = 'New York'"
+            },
+            "right": {
+                "type": "operand",
+                "value": "age <= 40"
+            }
+        }
+    },
+    "data": {
+        "age": 38,
+        "location": "New York",
+        "salary": 55000,
+        "experience": 3
+    }
+}
+
+
+{
+    "ast": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+            "type": "operand",
+            "value": "department = 'Engineering'"
+        },
+        "right": {
+            "type": "operator",
+            "value": "OR",
+            "left": {
+                "type": "operand",
+                "value": "age > 40"
+            },
+            "right": {
+                "type": "operand",
+                "value": "salary < 80000"
+            }
+        }
+    },
+    "data": {
+        "age": 42,
+        "department": "Engineering",
+        "salary": 75000,
+        "experience": 10
+    }
+}
+
+
+{
+    "ast": {
+        "type": "operator",
+        "value": "OR",
+        "left": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": "experience >= 3"
+            },
+            "right": {
+                "type": "operand",
+                "value": "salary > 60000"
+            }
+        },
+        "right": {
+            "type": "operand",
+            "value": "department = 'Sales'"
+        }
+    },
+    "data": {
+        "age": 29,
+        "department": "Marketing",
+        "salary": 62000,
+        "experience": 4
+    }
+}
+
+
+{
+    "ast": {
+        "type": "operator",
+        "value": "AND",
+        "left": {
+            "type": "operator",
+            "value": "OR",
+            "left": {
+                "type": "operand",
+                "value": "location = 'Remote'"
+            },
+            "right": {
+                "type": "operand",
+                "value": "experience < 2"
+            }
+        },
+        "right": {
+            "type": "operator",
+            "value": "AND",
+            "left": {
+                "type": "operand",
+                "value": "age > 25"
+            },
+            "right": {
+                "type": "operand",
+                "value": "department = 'Support'"
+            }
+        }
+    },
+    "data": {
+        "age": 28,
+        "department": "Support",
+        "location": "Remote",
+        "salary": 45000,
+        "experience": 1
+    }
+}
+
+
