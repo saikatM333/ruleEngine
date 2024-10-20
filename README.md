@@ -12,7 +12,7 @@
      
   ### **step 3.2 - if using `setupDocker.sh`, command to be followed***
     
-        chmod +x setup-docker.sh
+        chmod +x setupDocker.sh
         ./setupDocker.sh    
 ### **step 4 - now project is running in the port =8000**
 use the example-json file to take the json body for each api end point
