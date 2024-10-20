@@ -9,3 +9,8 @@
 ### **step 4 - now project is running in the port =8000**
 use the example-json file to take the json body for each api end point
 
+### ** Api endpoints **
+ POST -  http://127.0.0.1:8000/api/rules/evaluate_rule
+ POST - http://127.0.0.1:8000/api/rules/create_rule
+ Post - http://127.0.0.1:8000/api/rules/combine_rules
+
