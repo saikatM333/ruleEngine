@@ -43,9 +43,9 @@ docker-compose exec web python manage.py migrate
 echo "----------------------------"
 echo "Setup is complete! Your server is running inside Docker at http://127.0.0.1:8000/"
 echo "Available API endpoints for testing:"
-echo "1. Create Rule - POST http://127.0.0.1:8000/api/rules/create/"
-echo "2. Evaluate Rule - POST http://127.0.0.1:8000/api/rules/evaluate/"
-echo "3. Combine Rules - POST http://127.0.0.1:8000/api/rules/combine/"
+echo "1. Create Rule - POST http://127.0.0.1:8000/api/rules/create"
+echo "2. Evaluate Rule - POST http://127.0.0.1:8000/api/rules/evaluate"
+echo "3. Combine Rules - POST http://127.0.0.1:8000/api/rules/combine"
 echo "----------------------------"
 
 # Step 7: Show Docker Logs
