@@ -1,5 +1,6 @@
 ## **How to use**
  ### **step 1 - clone the project**
+      git clone https://github.com/saikatM333/ruleEngine.git
  ### **step 2 - there are 2 setup project**
      1 -setup.sh for running the application is python is installed in the client device 
      2- setup-docker.sh for running the application in the docker 
