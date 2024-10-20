@@ -14,7 +14,10 @@
     
         chmod +x setup-docker.sh
         ./setup-docker.sh    
-### **step 4 - now project is running in the port =8000**
+  ### ** Note : step 4 - it will ask secret Key ** ###
+     for secret key just press the enter key it will automaticaly genearate the it       
+     
+### **step 5 - now project is running in the port =8000**
 use the example-json file to take the json body for each api end point
 
 ### ** Api endpoints **
