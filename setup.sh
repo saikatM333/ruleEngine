@@ -43,9 +43,9 @@ python manage.py migrate
 # Step 8: Start the Django Development Server
 echo "Starting the Django development server..."
 echo "API endpoints for testing:"
-echo "1. Create Rule - POST http://127.0.0.1:8000/api/rules/create/"
-echo "2. Evaluate Rule - POST http://127.0.0.1:8000/api/rules/evaluate/"
-echo "3. Combine Rules - POST http://127.0.0.1:8000/api/rules/combine/"
+echo "1. Create Rule - POST http://127.0.0.1:8000/api/rules/create"
+echo "2. Evaluate Rule - POST http://127.0.0.1:8000/api/rules/evaluate"
+echo "3. Combine Rules - POST http://127.0.0.1:8000/api/rules/combine"
 python manage.py runserver
 
 echo "----------------------------"
