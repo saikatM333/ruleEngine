@@ -10,10 +10,10 @@
          chmod +x setup.sh
          ./setup.sh
      
-  ### **step 3.2 - if using `setup-docker.sh`, command to be followed***
+  ### **step 3.2 - if using `setupDocker.sh`, command to be followed***
     
         chmod +x setup-docker.sh
-        ./setup-docker.sh    
+        ./setupDocker.sh    
 ### **step 4 - now project is running in the port =8000**
 use the example-json file to take the json body for each api end point
 
